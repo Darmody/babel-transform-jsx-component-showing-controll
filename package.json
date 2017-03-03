@@ -1,0 +1,25 @@
+{
+  "name": "babel-plugin-jsx-component-in-load",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "./node_modules/.bin/babel --presets es2015-sane,stage-0,react src --out-dir lib",
+    "watch": "npm run compile -- --watch",
+    "prepublish": "npm run compile"
+  },
+  "author": "Nate Wienert",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.23.0",
+    "babel-preset-es2015-sane": "^6.6.0",
+    "babel-preset-flow": "^1.0.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0"
+  },
+  "dependencies": {
+    "color-js": "^1.0.3",
+    "lodash.throttle": "^4.1.1",
+    "react": "^15.3.0"
+  }
+}
