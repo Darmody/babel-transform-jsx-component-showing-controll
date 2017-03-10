@@ -9,8 +9,9 @@ export default ({ types: t }) => ({
       const { node } = path
       const attributes = node.openingElement.attributes
       if (!attributes) return
-      const ifAttribute = attributes.filter(isShow)[0]
-      if (ifAttribute) {
+      const isShowAttribute = attributes.filter(isShow)[0]
+      const showTagAttribute = attributes.filter(isCustomComponent)[0]
+      if (isShowAttribute || showTagAttribute) {
         const opening = t.JSXOpeningElement(
           node.openingElement.name, attributes.filter(x => isntShow(x) && isntCustomComponent(x))
         )
@@ -18,14 +19,14 @@ export default ({ types: t }) => ({
 
         const customComponentAttribute = attributes.filter(isCustomComponent)[0]
         const tagName = customComponentAttribute ? customComponentAttribute.value.value : 'InLoading'
-        const inShowing = t.JSXOpeningElement(t.JSXIdentifier(tagName), [])
-        const CloseinShowing = t.JSXClosingElement(t.JSXIdentifier(tagName))
-        const showingTag = t.JSXElement(inShowing, CloseinShowing, [])
+        const notShow = t.JSXOpeningElement(t.JSXIdentifier(tagName), [])
+        const CloseNotShow = t.JSXClosingElement(t.JSXIdentifier(tagName))
+        const otherTag = t.JSXElement(notShow, CloseNotShow, [])
 
         const conditional = t.conditionalExpression(
-          (!ifAttribute.value || ifAttribute.value.expression),
+          (!isShowAttribute || !isShowAttribute.value || isShowAttribute.value.expression),
           tag,
-          showingTag,
+          otherTag,
         )
         path.replaceWith(conditional)
       }

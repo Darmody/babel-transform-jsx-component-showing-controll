@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsx-component-showing-controll",
-  "version": "1.0.4",
+  "version": "1.0.6",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
