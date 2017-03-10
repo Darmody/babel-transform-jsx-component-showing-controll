@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-jsx-component-showing-controll",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "lib/index.js",
   "scripts": {
@@ -16,10 +16,5 @@
     "babel-preset-flow": "^1.0.0",
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0"
-  },
-  "dependencies": {
-    "color-js": "^1.0.3",
-    "lodash.throttle": "^4.1.1",
-    "react": "^15.3.0"
   }
 }

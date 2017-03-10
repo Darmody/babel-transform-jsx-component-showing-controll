@@ -1,4 +1,6 @@
-## babel-plugin-jsx-component-showing-controll 1.0.6
+## babel-plugin-jsx-component-showing-controll  
+
+v1.0.7
 
 Inspired by [babel-plugin-jsx-if](https://github.com/motion/babel-transform-jsx-if).  
 
@@ -27,6 +29,7 @@ Component.js
 ```jsx
 import React, { PureComponent } from 'react'
 
+// Or require it globally
 const InLoading = () => (<div>loading...</div>) // eslint-disable-line
 
 export default class Component extends PureComponent {
@@ -63,3 +66,9 @@ export default class Component extends PureComponent {
 }
 
 ```
+
+### Use case
+
+* loading display
+* permission controll
+* other conditional component display case
