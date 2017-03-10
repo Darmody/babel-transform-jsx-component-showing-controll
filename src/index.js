@@ -14,7 +14,7 @@ export default ({ types: t }) => ({
         const tag = t.JSXElement(opening, node.closingElement, node.children)
 
         const customComponentAttribute = attributes.filter(isCustomComponent)[0]
-        tagName = customComponentAttribute ? customComponentAttribute.value : 'InLoading'
+        const tagName = customComponentAttribute ? customComponentAttribute.value : 'InLoading'
         const inShowing = t.JSXOpeningElement(t.JSXIdentifier(tagName), [])
         const CloseinShowing = t.JSXClosingElement(t.JSXIdentifier(tagName))
         const showingTag = t.JSXElement(inShowing, CloseinShowing, [])
